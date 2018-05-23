@@ -1,0 +1,9 @@
+stage('clean') {
+
+}
+stage('compile') {
+
+}
+stage('test') {
+
+}
