@@ -1,3 +1,8 @@
+stage('checkout') {
+    node {
+        bat 'checkout scm'
+    }
+}
 stage('clean') {
     node {
         bat "mvn clean"
