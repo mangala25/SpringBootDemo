@@ -1,6 +1,6 @@
 stage('checkout') {
     node {
-        bat 'checkout scm'
+        checkout scm
     }
 }
 stage('clean') {
