@@ -18,15 +18,8 @@ stage('test') {
         bat "mvn test"
     }
 }
-stage('parralel') {
-     parallel 	'CFPUSH': {
-						echo "CFPUSH"
-    }   , 		'Sonar': {
-					echo "Sonar"
-    }, '		Owasp': {
-					echo "Owasp"
-    }
-}
-stage('Upload') {
-    echo "Upload"
+stage('build') {
+    node {
+		bat "mvn install"
+	}
 }
