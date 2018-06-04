@@ -25,7 +25,7 @@ stage('build') {
 }
 stage('upload') {
 	node {
-		def server = Artifactory.server 'my-server-id'
+		def server = Artifactory.server 'Test_Artifactory'
 		def uploadSpec = """{
 		"files": 
 		[
