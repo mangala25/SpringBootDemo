@@ -23,3 +23,18 @@ stage('build') {
 		bat "mvn install"
 	}
 }
+stage('upload') {
+	node {
+		def server = Artifactory.server 'my-server-id'
+		def uploadSpec = """{
+		"files": 
+		[
+			{
+				"pattern": "target/banking-0.0.1-SNAPSHOT.jar",
+				"target": "example-repo-local/"
+			}
+		]
+		}"""
+		server.upload(uploadSpec)
+	}
+}
